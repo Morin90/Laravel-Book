@@ -16,4 +16,5 @@ Route::get('/books', [App\Http\Controllers\BookController::class, 'index'])->nam
 Route::get('/books/create', [App\Http\Controllers\BookController::class, 'create'])->name(name: 'books.create');
 Route::post('/books/store', [App\Http\Controllers\BookController::class, 'store'])->name(name: 'books.store');
 Route::get('/books/edit/{book}', [App\Http\Controllers\BookController::class, 'edit'])->name(name: 'books.edit');
-Route::put('/books', [App\Http\Controllers\BookController::class, 'update'])->name(name: 'books.update');
+Route::put('/books{book}', [App\Http\Controllers\BookController::class, 'update'])->name(name: 'books.update');
+Route::delete('/books/{book}', [App\Http\Controllers\BookController::class, 'destroy'])->name(name: 'books.destroy');

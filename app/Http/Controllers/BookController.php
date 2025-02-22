@@ -37,4 +37,13 @@ class BookController extends Controller
             'book' => $book
         ]);
     }
+
+    public function update(Request $request, Book $book){
+
+        $book->update([
+            'title' => $request->title
+        ]);
+
+        return redirect()->route('books.index');
+    }
 }
