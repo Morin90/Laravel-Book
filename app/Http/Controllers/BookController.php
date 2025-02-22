@@ -15,4 +15,8 @@ class BookController extends Controller
                 'books' => $books
             ]);
     }
+    public function create()
+    {
+        return view('books.create');
+    }
 }
