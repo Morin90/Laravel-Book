@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class BookController extends Controller
@@ -15,8 +16,25 @@ class BookController extends Controller
                 'books' => $books
             ]);
     }
+
     public function create()
     {
         return view('books.create');
+    }
+
+    public function store(Request $request){
+        // dd($request->all());
+        $user = User::factory()->create();
+        Book::create([
+            'title' => $request->title,
+            'user_id' => $user->id
+        ]);
+        return redirect()->route('books.index');
+    }
+
+    public function edit(Request $request, Book $book){
+        return view('books.edit', [
+            'book' => $book
+        ]);
     }
 }
