@@ -3,10 +3,10 @@
 
 @section('content')
 
-<div class="pt-20 sm:pt-25 md:pt-15">
+<div class="pt-2 sm:pt-25 md:pt-15">
     <div class="flex justify-center items-center min-h-screen m-0 flex-col">
-        <h1 class="mt-10 text-xl font-bold underline">Liste des livres actuellement disponibles</h1>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5 w-full p-8">
+        <h1 class="mt-2 text-xl font-bold underline">Liste des livres actuellement disponibles</h1>
+        <div class="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-5 p-8">
             @foreach ($books as $book)
                 <div class="border rounded-lg bg-indigo-200 shadow-md hover:shadow-lg flex flex-col h-full">
                     <p class="font-semibold text-lg text-black flex-grow">
@@ -25,7 +25,6 @@
                             </button>
                         </form>
                     </div>
-                   
                 </div>
             @endforeach
         </div>
