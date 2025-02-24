@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="flex items-center justify-center min-h-screen bg-gray-100">
-    <div class="bg-white shadow-lg rounded-lg p-6 w-full max-w-md">
+    <div class="bg-indigo-200 shadow-lg rounded-lg p-6 w-full max-w-md">
         <h2 class="text-2xl font-bold text-center text-gray-700 mb-4">Modifier le Livre</h2>
 
         <form action="{{ route('books.update', $book) }}" method="POST" class="space-y-4">
@@ -10,7 +10,7 @@
             @method('PUT')
 
             <div>
-                <label for="title" class="block text-gray-600 font-semibold">Titre du livre</label>
+                <label for="title" class="block text-gray-700 font-medium mb-2">{{$book->title}}</label>
                 <input 
                     type="text" 
                     id="title" 
